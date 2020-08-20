@@ -14,6 +14,11 @@ import android.view.ViewGroup;
 public class HomeScreen extends Fragment {
 
     @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
@@ -27,8 +32,8 @@ public class HomeScreen extends Fragment {
         view.findViewById(R.id.nextButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //NavHostFragment.findNavController(HomeScreen.this)
-                        //.navigate(R.id.action_homeScreen2_to_mainActivity3);
+                NavHostFragment.findNavController(HomeScreen.this)
+                        .navigate(R.id.action_homeScreen2_to_registrationScreen);
             }
         });
     }
